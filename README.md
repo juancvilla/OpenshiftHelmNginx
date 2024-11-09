@@ -6,13 +6,21 @@ Verificar las versiones:
 
 ```helm version```
 
-Agregar repositorio bitnami
+Agregar repositorios
 
 ```helm repo add bitnami https://charts.bitnami.com/bitnami```
 
-Ver que bitnami este en la lista de los repositorios 
+```helm repo add redhat-charts https://redhat-developer.github.io/redhat-helm-charts```
+
+Ver el listado de los repositorios 
 
 ```helm repo list```
+
+Ver el listado de los paquetes:
+
+```helm search repo bitnami```
+
+```helm search repo redhat-chart```
 
 Buscar app nginx
 
