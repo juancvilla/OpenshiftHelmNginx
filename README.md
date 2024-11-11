@@ -12,6 +12,8 @@ Agregar repositorios
 
 ```helm repo add redhat-charts https://redhat-developer.github.io/redhat-helm-charts```
 
+```helm repo add openshift-helm-charts https://charts.openshift.io/```
+
 Ver el listado de los repositorios 
 
 ```helm repo list```
@@ -21,6 +23,8 @@ Ver el listado de los paquetes:
 ```helm search repo bitnami```
 
 ```helm search repo redhat-chart```
+
+```helm search repo openshift-helm-charts``
 
 Buscar app nginx
 
