@@ -24,7 +24,7 @@ Ver el listado de los paquetes:
 
 ```helm search repo redhat-chart```
 
-```helm search repo openshift-helm-charts``
+```helm search repo openshift-helm-charts```
 
 Buscar app nginx
 
