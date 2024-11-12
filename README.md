@@ -38,6 +38,8 @@ Revisar que este instalado:
 
 ```helm ls```
 
+```helm list -a```
+
 Generar ruta para que podamos llegar a el desde internet:
 
 ```oc expose svc/my-nginx```
