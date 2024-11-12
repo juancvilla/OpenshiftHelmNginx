@@ -32,7 +32,7 @@ Buscar app nginx
 
 Crear archivos de helm para solución: my-nginx
 
-```helm create bitnami-nginx
+```helm create bitnami-nginx```
 
 Revisar que la estrucura esta ok:
 
@@ -44,13 +44,17 @@ Editar archivo values.yaml:
 
 Modificar archivo:
 
-```repository: nginx   --->   repository: bitnami/nginx
-...
-port:8080```
+```repository: nginx   --->   repository: bitnami/nginx```
+
+```port:80   --->   port:8080```
 
 Instalar estructura:
 
 ```helm install my-nginx bitnami-nginx```
+
+ó:
+
+```helm install my-nginx bitnami-nginx ```
 
 Revisar que este instalado:
 
