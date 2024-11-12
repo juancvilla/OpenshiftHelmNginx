@@ -34,6 +34,10 @@ Instalar my-nginx con helm
 
 ```helm install my-nginx bitnami/nginx --set service.type=ClusterIP```
 
+ó:
+
+```helm install my-nginx bitnami/nginx --set service.type=NodePort```
+
 Revisar que este instalado:
 
 ```helm ls```
