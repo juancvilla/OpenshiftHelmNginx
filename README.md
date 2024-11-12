@@ -30,13 +30,27 @@ Buscar app nginx
 
 ```helm search repo bitnami/nginx```
 
-Instalar my-nginx con helm
+Crear archivos de helm para solución: my-nginx
 
-```helm install my-nginx bitnami/nginx --set service.type=ClusterIP```
+```helm create bitnami-nginx
 
-ó:
+Revisar que la estrucura esta ok:
 
-```helm install my-nginx bitnami/nginx --set service.type=NodePort```
+```tree bitnami-nginx```
+
+Editar archivo values.yaml:
+
+```vim bitnami-nginx/values.yaml```
+
+Modificar archivo:
+
+```repository: nginx   --->   repository: bitnami/nginx
+...
+port:8080```
+
+Instalar estructura:
+
+```helm install my-nginx bitnami-nginx```
 
 Revisar que este instalado:
 
