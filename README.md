@@ -64,7 +64,7 @@ Revisar que este instalado:
 
 Generar ruta para que podamos llegar a el desde internet:
 
-```oc expose svc/my-nginx```
+```oc expose svc/my-nginx-bitnami-nginx```
 
 Validar que la ruta se genero correctamente:
 
