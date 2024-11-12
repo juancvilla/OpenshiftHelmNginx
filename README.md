@@ -76,7 +76,7 @@ Desinstalar app:
 
 No olvides eliminar la ruta:
 
-```oc delete route my-nginx```
+```oc delete route my-nginx-bitnami-nginx```
 
 
 
