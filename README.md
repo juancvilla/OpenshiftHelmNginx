@@ -1,42 +1,10 @@
 # Openshift Helm Nginx
 
-Verificar las versiones:
-
-```oc  get clusterversion```
-
-```helm version```
-
-Agregar repositorios
-
-```helm repo add bitnami https://charts.bitnami.com/bitnami```
-
-```helm repo add redhat-charts https://redhat-developer.github.io/redhat-helm-charts```
-
-```helm repo add openshift-helm-charts https://charts.openshift.io/```
-
-Ver el listado de los repositorios 
-
-```helm repo list```
-
-Ver el listado de los paquetes:
-
-```helm search repo bitnami```
-
-```helm search repo redhat-chart```
-
-```helm search repo openshift-helm-charts``
-
-Buscar app nginx
-
-```helm search repo bitnami/nginx```
+...
 
 Instalar my-nginx con helm
 
-```helm install my-nginx bitnami/nginx --set service.type=ClusterIP```
-
-ó:
-
-```helm install my-nginx bitnami/nginx --set service.type=NodePort```
+```helm install my-nginx bitnami/nginx```
 
 Revisar que este instalado:
 
@@ -44,21 +12,31 @@ Revisar que este instalado:
 
 ```helm list -a```
 
-Generar ruta para que podamos llegar a el desde internet:
+Editar algunos archivos:
 
-```oc expose svc/my-nginx```
+```vim my-nginx/values.yaml```
 
-Validar que la ruta se genero correctamente:
+Modificar algunos valores:
 
-```oc get routes```
+```replicaCount: 1   --->   replicaCount: 2```
 
-Desinstalar app:
+Cada vez que se modifique y tengamos un nuevo release utilizar comando:
 
-```helm uninstall my-nginx```
+```helm upgrade my-nginx bitnami-nginx```
 
-No olvides eliminar la ruta:
+Validar con comando:
 
-```oc delete route my-nginx```
+```helm list -a```
 
+```oc get pods```
 
+Se puede realizar un rollback con el comando:
+
+```helm rollback my-nginx 1```
+
+Notar que el Rollback no vuelve a la versión antigua, sino que se crea una nueva version, pero con las características del nivel de rollback:
+
+```helm list -a```
+
+```oc get pods```
 
